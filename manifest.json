@@ -1,0 +1,34 @@
+{
+  "manifest_version": 3,
+  "name": "WhatsApp Number Scraper",
+  "version": "1.0",
+  "description": "Extract phone numbers from WhatsApp Web and export as CSV or Txt",
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
+  "permissions": [
+    "scripting",
+    "activeTab"
+  ],
+  "host_permissions": [
+    "https://web.whatsapp.com/*"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "WhatsApp Number Scraper",
+    "default_icon": {
+      "16": "icon16.png",
+      "48": "icon48.png",
+      "128": "icon128.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://web.whatsapp.com/*"],
+      "js": ["content.js"], 
+      "run_at": "document_end"
+    }
+  ]
+}
